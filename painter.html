@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-    <title>  Lalith painter</title>
+    <title>Lalith painter</title>
  </head>
 <body>
 
@@ -9,10 +9,10 @@
 
 <form>
     <label for="hiddenPainter">The hiden painter name</label>
-    <input type ="password" id="hiddenPainter" value=Monet> <br>
+    <input type ="text" id="hiddenPainter" value="Monet"> <br>
 
-    <label for="GuessPainter">Guess the painter</label>
-    <input type ="text" id="GuessPainter"><br>
+    <label for="uessPainter">Guess the painter</label>
+    <input type ="text" id="guessPainter"><br>
 
     <input type="button" onclick="checkPainter()" value="Get values from form"> Check the guess
 </form>
@@ -25,14 +25,14 @@ let good = 0;
 let oops=0;
 
 function checkPainter (){
-    //console.log("Getting form values")
+    console.log("Getting form values")
     hiddenPainter = document.getElementById("hiddenPainter").value;
-    guessPainter = document.getElementById("GuessPainter").value;
+    guessPainter = document.getElementById("guessPainter").value;
     //confirmed = confirm("Are these the values? "+age+" and "+nick)
     
    // out = document.getElementById("result")
     
-   if(hiddenPainter == GuessPainter){
+   if(hiddenPainter == guessPainter){
         good +=1;
         alert("You got it right");
         document.getElementById("result").innerHTML=good;
@@ -41,7 +41,32 @@ function checkPainter (){
         alert("Sorry");
         document.getElementById("result").innerHTML=oops;
     }
+    
 }
+</script>
+
+<div class="continer-fluid">
+    <img src="verbena-Flower.jpg" class="img-fluid" id="image" alt="verbena" , onclick="selectImage()" height=100, width =100> 
+</div>
+<script>
+    useImage=1 
+    function selectImage(){
+        switch(useImage){
+            case 1:
+                document.getElementById("image").src="verbena-Flower.jpg";
+                useImage++;
+                break
+                case 2:
+                    document.getElementById("image").src="Ulex.jpg";
+                    useImage++;
+                    break;
+                    case 3:
+                        document.getElementById("image").src= "Pandorea.jpg";
+                        useImage=1
+                        break;
+        }
+
+    }
 </script>
 
 </body>
